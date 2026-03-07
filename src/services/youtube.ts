@@ -1,10 +1,11 @@
 import { Song } from '../types';
 
-const API_KEY = 'YOUR_YOUTUBE_API_KEY'; // Replace with actual key
+const API_KEY = 'AIzaSyBWIg7rAv-r4CCdSx3haezuzOJPIWB-Xbw'; // Replace with actual key
 const BASE_URL = 'https://www.googleapis.com/youtube/v3/search';
 
 export const searchYouTube = async (query: string): Promise<Song[]> => {
-    if (API_KEY === 'YOUR_YOUTUBE_API_KEY') {
+    // If the API key acts as a placeholder, return mock data
+    if (API_KEY.includes('YOUR_YOUTUBE')) {
         console.warn('YouTube API Key is missing. Returning mock data.');
         return mockSearch(query);
     }

@@ -39,8 +39,7 @@ export const useQueueStore = create<QueueState>((set) => ({
         set(() => {
             // Limit pitch between -6 and +6
             const clampedPitch = Math.max(-6, Math.min(6, newPitch));
-            const rate = Math.pow(2, clampedPitch / 12);
-            return { pitch: clampedPitch, playbackRate: rate };
+            return { pitch: clampedPitch, playbackRate: 1.0 }; // Keep playbackRate at 1.0 for true pitch shifting
         }),
 
     setVolume: (newVolume: number) =>
